@@ -1,0 +1,11 @@
+__pypackages__/
+__pypackages__/*
+__pycache__
+__pycache__/*
+
+
+ca.pem
+
+.terraform
+.terraform.lock.hcl
+.terraform.tfstate.backup
