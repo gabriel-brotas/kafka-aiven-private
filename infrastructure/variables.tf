@@ -1,16 +1,26 @@
-variable "aiven_api_token" {
-   description = "Aiven console API token"
-   type = string
-}
-
 variable "project_name" {
    description = "Aiven console project name"
    type        = string
-   default = "gabriel-sandbox"
+   default = "aiven-connection"
 }
 
-variable "service_name" {
-   description = "Aiven service name"
-   type        = string
-   default = "kafka-service"
+variable "aws_region" {
+    description = "Region in which AWS resources will be deployed"
+    type = string
+    default = "us-east-1"
+}
+
+variable "vpc_cidr" {
+    description = "CIDR block for the VPC"
+    type = string
+}
+
+variable "vpc_public_subnets_cidr" {
+    description = "CIDR block for the Public Subnets"
+    type = list
+}
+
+variable "vpc_private_subnets_cidr" {
+    description = "CIDR block for the Private Subnets"
+    type = list
 }

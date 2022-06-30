@@ -4,7 +4,8 @@ RUN apt update && apt install -y --no-install-recommends \
     default-jre \
     git \
     libsnappy-dev \
-    curl
+    curl \
+    nano
 
 RUN apt-get install build-essential librdkafka-dev -y
 

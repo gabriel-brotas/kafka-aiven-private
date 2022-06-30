@@ -1,0 +1,37 @@
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+apt-cache policy docker-ce
+sudo apt install docker-ce docker-compose
+
+echo "AIVEN_BOOTSTRAP_SERVER=privatelink-1-kafka-private-gabriel-sandbox.aivencloud.com:28404
+AIVEN_SASL_USERNAME=avnadmin
+AIVEN_SASL_PASSWORD=AVNS_kTktK8hgJpEj5TCC_nN
+ENVIRONMENT=prod" > .env
+
+echo "-----BEGIN CERTIFICATE-----
+MIIEQTCCAqmgAwIBAgIUfkJo2kL3d9MN1lLUUsudU3DpwhMwDQYJKoZIhvcNAQEM
+BQAwOjE4MDYGA1UEAwwvYjcyNTZkZmEtNzUzYi00ZWQyLWE4NTEtNTViMWJkODAy
+ZmZlIFByb2plY3QgQ0EwHhcNMjIwNjA2MTQyMjM3WhcNMzIwNjAzMTQyMjM3WjA6
+MTgwNgYDVQQDDC9iNzI1NmRmYS03NTNiLTRlZDItYTg1MS01NWIxYmQ4MDJmZmUg
+UHJvamVjdCBDQTCCAaIwDQYJKoZIhvcNAQEBBQADggGPADCCAYoCggGBAMHnsu/O
+vvHzxjnNTQa2q1CmHpYg3vrdMcOVHjs8aaoXh4b+oIs+dnR3VJ2jPbmydJIdzcLO
+6B7hPO3OjZJpKh35Sx0rWOWZ5nJIzZ6GQ66DkV8Ihmh3ko9nnViSmfuLKqZIAATx
+yxeKrjNEQHsFckqLPSndxbV5CZ1+xg691JhBcls7tQlj8JUi/kpUXIJZY54vCw5w
+OkauY9wwHrEuQPaUuQBR9y+DCwVDBlxUqaE/HiJgeUiqSrK8L78fataSriB7nPOO
+HHZClTxDksBOSOg3fAR3e2svtSenBFaQxYIoXeAEq8rBAC6YAH4GB+UeVJ6QbSg3
+jsPMjsRTEwAcPWZYJbVVkDtbhcj/cni9vWs89bT9JwfvrDxEr5XQ9u5TdaxqRoW/
+pDEzZL7jDwH6zEwZmG+77lY1SmT2OWC0ai18kPLmL5TQaTbNgknI6AewJRt5Fkg9
+0VWRaqtKw073A0yehf8Mqe3AQzpwzOzxxdtRTe4a36wa5YkWsMHQGnZ29QIDAQAB
+oz8wPTAdBgNVHQ4EFgQUCfQj9/zX3/oTzCUhhBbWxqxWRv4wDwYDVR0TBAgwBgEB
+/wIBADALBgNVHQ8EBAMCAQYwDQYJKoZIhvcNAQEMBQADggGBAK7MxCib1BL2w7gO
+5mvYUzW0DoNJKnQiuJLMHxcsl/51sr4g2nxp4kam6yW6Dk+5h9/K+QGE5k1sQUM9
+ZpNvJ+uCfRguezh7Zx/Ptn9mealNdbwfSBWQcmtYNUvukJM41NQgWFDioU9EFThi
+E+jm5rIDzBpw5mBj4rY+OYamKbPvHkbWIMXpXuwi58Gil5GeTvF01iaxt5qonTUD
+w3lmEiPVb7IgibNmXh6dSUO+KUkcG1AxQE5RfISA6qzH16W6w0YGryIkX7t7Y9pc
+2Gf2tu6pUGs+0pQjKdSD/++2I1UvVQSyTYjIQ3VvIJKDO6nyciUjOoU/XY6hnyGb
+QkIOwshggD7VDPCtO4oUH84ySy9ntjRy1VYKt+k09uSXAtCtxd7rOkQyXU28/43m
+hz0h/ur70MbOCHzb9EP/oUplcPFSLZw6mMxnxkpi807YXoECJ+36bNqyOhMocv9I
+t3m7YJHk/ahzpYA8aOBhcbel1hS5sAUrCcYX/tJxv2/xYuLIkQ==
+-----END CERTIFICATE-----" > ca.pem
